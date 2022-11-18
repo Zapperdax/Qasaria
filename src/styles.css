@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: 'Play', sans-serif;
+    background-color: #211F2C;
+}
+
+.navbar{
+    padding: 2rem;
+    background-color: #2F2736 !important;
+}
+.navContainer{
+    margin: 0 !important;
+}
+.navbarToggle{
+    background-color:#fafafa;
+}
+
+.navbarToggle:focus,
+.navbarToggle:active{
+    outline: none;
+    box-shadow: none;
+}
+.logo{
+    font-size: 1.5rem;
+    font-family: 'Peralta', cursive;
+}
+.link{
+    font-size: 1.2rem;
+    display: inline-block;
+    position: relative;
+}
+.link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #D31C3E;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+.logo, .link{
+    color: #fafafa !important;
+}
+.carousel .carousel-item {
+    height: 31.25rem;
+}
+  
+.carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+}
+
+.games{
+    padding: 2rem;
+}
+.games h1{
+    color: white;
+}
+
+.cardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.myCard{
+    background-color: #161a1e;
+    width: 15rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.myCard img{
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.cardInfo{
+    text-align: left;
+    padding: 0.3rem;
+}
+.cardInfo p, .cardInfo h4{
+    margin-bottom: 0;
+}
+.cardInfo p{
+    font-size: 0.7rem;
+    color: #808082;
+}
+.cardInfo h4{
+    color: white;
+}
+
+.play {
+  background-color: #26312a;
+  border-radius: 100px;
+  box-shadow: rgba(10, 46, 24, 0.2) 0 -25px 18px -14px inset,rgba(10, 46, 24, .15) 0 1px 2px,rgba(10, 46, 24, .15) 0 2px 4px,rgba(10, 46, 24, .15) 0 4px 8px,rgba(10, 46, 24, .15) 0 8px 16px,rgba(10, 46, 24, .15) 0 16px 32px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.play:hover {
+  box-shadow: rgba(20, 20, 20, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+@media only screen and (min-width: 320px) and (max-width:380px){
+    .logo{
+        font-size: 0.8rem;
+    }
+    .link{
+        font-size: 0.8rem;
+    }
+    .navbar-toggler{
+        padding: 0.2rem 0.5rem;
+    }
+    .navbar-toggler-icon{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 381px) and (max-width:452px){
+    .logo{
+        font-size: 1rem;
+    }
+    .link{
+        font-size: 1rem;
+    }
+    .navbar-toggler{
+        padding: 0.4rem 0.7rem;
+    }
+    .navbar-toggler-icon{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1045px){
+    .myCard{
+        margin-bottom: 1.5rem;
+    }
+}
