@@ -10,7 +10,7 @@ export default function MyCarousel() {
 
   return (
     <Carousel
-      autoPlay={true}
+      autoPlay={false}
       interval={5000}
       activeIndex={index}
       onSelect={handleSelect}
@@ -18,7 +18,7 @@ export default function MyCarousel() {
       <Carousel.Item className="carouselItem">
         <img
           className="d-block w-100"
-          src="images/wallpaper.jpg"
+          src="images/rps.webp"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -29,19 +29,24 @@ export default function MyCarousel() {
       <Carousel.Item className="carouselItem">
         <img
           className="d-block w-100"
-          src="images/dem.jpg"
+          src="images/tenzies2.jpg"
           alt="Second slide"
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 style={{ color: "#FF576E", fontWeight: "bolder" }}>
+            Tenzies Game
+          </h3>
+          <p style={{ color: "#ffffff" }}>
+            Roll 10 dice at the same time, lock the ones with same numbers, get
+            all dice to a single number and win.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="carouselItem">
         <img
           className="d-block w-100"
-          src="images/wallpaper.jpg"
+          src="images/simon.jpg"
           alt="Third slide"
         />
 

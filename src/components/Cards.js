@@ -7,10 +7,10 @@ function Cards() {
       <div className="cardContainer">
         <div className="myCard">
           <div className="imageContainer">
-            <img src="/images/game.jpg" alt="game" />
+            <img src="/images/rps.webp" alt="game" />
           </div>
           <div className="cardInfo">
-            <h4>Tenzies</h4>
+            <h4>RPS</h4>
             <p>Arcade Game</p>
           </div>
           <div className="play">Play</div>
@@ -18,33 +18,33 @@ function Cards() {
 
         <div className="myCard">
           <div className="imageContainer">
-            <img src="/images/dem.jpg" alt="game" />
+            <img src="/images/tenzies2.jpg" alt="game" />
           </div>
           <div className="cardInfo">
             <h4>Tenzies</h4>
-            <p>Arcade Game</p>
+            <p>RNG Game</p>
           </div>
           <div className="play">Play</div>
         </div>
 
         <div className="myCard">
           <div className="imageContainer">
-            <img src="/images/wallpaper.jpg" alt="game" />
+            <img src="/images/qasaria2.jpg" alt="game" />
           </div>
           <div className="cardInfo">
-            <h4>Tenzies</h4>
-            <p>Arcade Game</p>
+            <h4>Legends Of Qasaria</h4>
+            <p>Story Mode Game</p>
           </div>
           <div className="play">Play</div>
         </div>
 
         <div className="myCard">
           <div className="imageContainer">
-            <img src="/images/wallpaper.jpg" alt="game" />
+            <img src="/images/simon.jpg" alt="game" />
           </div>
           <div className="cardInfo">
-            <h4>Tenzies</h4>
-            <p>Arcade Game</p>
+            <h4>Simon Game</h4>
+            <p>Memory Game</p>
           </div>
           <div className="play">Play</div>
         </div>

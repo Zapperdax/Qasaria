@@ -52,12 +52,12 @@ body{
     color: #fafafa !important;
 }
 .carousel .carousel-item {
-    height: 31.25rem;
+    height: 35.25rem;
 }
   
 .carousel-item img {
       position: absolute;
-      object-fit: cover;
+      object-fit: fill;
       top: 0;
       left: 0;
       height: 100%;
@@ -80,7 +80,7 @@ body{
 
 .myCard{
     background-color: #161a1e;
-    width: 15rem;
+    width: 16rem;
     padding: 1rem;
     text-align: center;
     border-radius: 15px;
