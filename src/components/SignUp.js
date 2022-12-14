@@ -10,6 +10,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { api } from "../utils/axois";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -32,13 +34,26 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    api
+      .post("/newUser", {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+      })
+      .then((response) => {
+        if (response.status === 201) {
+          const token = JSON.stringify(response.data.token);
+          localStorage.setItem("userToken", token);
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   const [formData, setFormData] = React.useState({
     firstName: "",
@@ -140,6 +155,7 @@ export default function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={handleSubmit}
             >
               Sign Up
             </Button>
