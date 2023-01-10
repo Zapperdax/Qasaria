@@ -1,10 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 export default function MyNavbar() {
   return (
-    <Navbar bg="light" expand="lg" className="navbar">
+    <Navbar bg="light" expand="lg" className="navbar fixed-top">
       <Container className="navContainer">
         <Navbar.Brand href="#home" className="logo">
           Mini Games Junction
@@ -15,12 +16,12 @@ export default function MyNavbar() {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home" className="link">
+            <Link className="link" to="/">
               Home
-            </Nav.Link>
-            <Nav.Link href="#link" className="link">
+            </Link>
+            <Link className="link" to="/chatlandingpage">
               Chat
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
