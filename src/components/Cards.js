@@ -5,6 +5,7 @@ function Cards() {
     <div className="games">
       <h1>Games</h1>
       <div className="cardContainer">
+        {/* //first Card */}
         <div className="myCard">
           <div className="imageContainer">
             <img src="/images/rps.webp" alt="game" />
@@ -15,7 +16,7 @@ function Cards() {
           </div>
           <div className="play">Play</div>
         </div>
-
+        {/* //Second Card */}
         <div className="myCard">
           <div className="imageContainer">
             <img src="/images/tenzies2.jpg" alt="game" />
@@ -26,7 +27,7 @@ function Cards() {
           </div>
           <div className="play">Play</div>
         </div>
-
+        {/* //Third Card */}
         <div className="myCard">
           <div className="imageContainer">
             <img src="/images/qasaria2.jpg" alt="game" />
@@ -37,7 +38,7 @@ function Cards() {
           </div>
           <div className="play">Play</div>
         </div>
-
+        {/* //Forth Card */}
         <div className="myCard">
           <div className="imageContainer">
             <img src="/images/simon.jpg" alt="game" />
@@ -48,6 +49,8 @@ function Cards() {
           </div>
           <div className="play">Play</div>
         </div>
+
+        {/* Card Ends Here */}
       </div>
     </div>
   );

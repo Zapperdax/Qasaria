@@ -19,10 +19,16 @@ const ChatbotLandingPage = () => {
               variant="standard"
               color="success"
             ></TextField>
-            <Button onClick={handleClick} variant="contained">
+
+            <Button
+              // style={{ backgroundColor: "red" }}
+              onClick={handleClick}
+              variant="contained"
+            >
               Join
             </Button>
           </div>
+
           <p
             style={{
               padding: "0.5rem",
@@ -36,14 +42,14 @@ const ChatbotLandingPage = () => {
         <div className="phoneOnlyDoodle">
           <img
             className="chatbotdoodle"
-            src="/images/chattybot.png"
+            src="/images/chatchatfinal.png"
             alt="doodle"
           />
         </div>
         <div className="chatRightSide">
           <img
             className="webChatbotDoodle"
-            src="/images/chattybot.png"
+            src="/images/chatchatfinal.png"
             alt="doodle"
           />
         </div>

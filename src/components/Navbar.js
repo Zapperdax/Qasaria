@@ -10,6 +10,7 @@ export default function MyNavbar() {
         <Navbar.Brand href="#home" className="logo">
           Mini Games Junction
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           className="navbarToggle"

@@ -57,10 +57,12 @@ export default function MyCarousel() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
+
+      {/* Carosel starts here */}
       <Carousel.Item className="carouselItem">
         <img
           className="d-block w-100"
-          src="images/wallpaper.jpg"
+          src="images/qasaria2.jpg"
           alt="Forth slide"
         />
 
@@ -71,6 +73,8 @@ export default function MyCarousel() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
+
+      {/* Carousel Ends Here */}
     </Carousel>
   );
 }

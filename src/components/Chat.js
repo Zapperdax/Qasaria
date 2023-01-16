@@ -20,14 +20,10 @@ const Chat = (props) => {
       setMessageClass("receiverMessage");
       setChat((preValue) => [...preValue, sendMessage]);
     });
+    // eslint-disable-next-line
   }, [socket]);
   return (
     <div className="chatbotPage">
-      <img
-        className="floating chatbotPNG"
-        src="/images/chattybot.png"
-        alt="chatbot"
-      />
       <div className="chatInfoContainer">
         <div className="chatbotInformation">Welcome {props.firstName}</div>
         <div className="chatMain">

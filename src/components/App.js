@@ -47,7 +47,12 @@ export default function App() {
         <Route path="/signUp" element={<SignUp />}></Route>
         <Route
           path="/chat"
-          element={<Chat firstName={firstName} lastName={lastName} />}
+          element={
+            <>
+              <MyNavbar />
+              <Chat firstName={firstName} lastName={lastName} />
+            </>
+          }
         ></Route>
         <Route
           path="/chatlandingpage"
