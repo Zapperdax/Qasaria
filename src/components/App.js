@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import MyNavbar from "./Navbar";
 import MyCarousel from "./Carousel";
-import Card from "./Cards";
+import Cards from "./Cards";
 import Login from "./Login";
 import { Routes, Route } from "react-router-dom";
 import SignUp from "./SignUp";
@@ -33,17 +33,17 @@ export default function App() {
     <div className="webpage">
       <Routes>
         <Route
-          path="/"
+          path="/home"
           element={
             <>
               <MyNavbar />
               <MyCarousel />
-              <Card />
+              <Cards />
             </>
           }
         ></Route>
 
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Login />}></Route>
         <Route path="/signUp" element={<SignUp />}></Route>
         <Route
           path="/chat"
@@ -67,3 +67,5 @@ export default function App() {
     </div>
   );
 }
+
+// <Route path="/active" element={< Cards />}> </Route>

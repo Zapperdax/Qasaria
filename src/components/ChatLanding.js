@@ -10,6 +10,7 @@ const ChatbotLandingPage = () => {
   return (
     <div className="chatbotPage">
       <div className="infoContainer">
+        {/* style={{ border: "1px solid red" }} */}
         <div className="chatLeftSide">
           <h1>Create A Chat Room</h1>
           <div style={{ padding: "1rem" }} className="chatButtonContainer">

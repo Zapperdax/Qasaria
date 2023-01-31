@@ -30,6 +30,7 @@ body{
 .logo{
     font-size: 1.5rem;
     font-family: 'Peralta', cursive;
+    color:#fafafa !important;
 }
 .link{
     font-size: 1.2rem;
@@ -37,6 +38,7 @@ body{
     position: relative;
     text-decoration: none;
     margin-right: 1rem;
+    color: #fafafa !important;
 }
 .link:after {
     content: '';
@@ -53,10 +55,8 @@ body{
 .link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
-.logo, .link{
-    color: #fafafa !important;
 }
+
 .carousel{
     padding-top: 5rem;
 }

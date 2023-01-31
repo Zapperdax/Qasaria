@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Android from "@mui/icons-material/Android";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -59,7 +61,7 @@ export default function Login() {
         if (response.status === 200) {
           const token = JSON.stringify(response.data.token);
           localStorage.setItem("userToken", token);
-          navigate("/");
+          navigate("/home");
         }
       });
   };
@@ -77,6 +79,7 @@ export default function Login() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            {/* Android */}
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">

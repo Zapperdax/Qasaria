@@ -43,6 +43,7 @@ function Cards() {
           <div className="imageContainer">
             <img src="/images/simon.jpg" alt="game" />
           </div>
+
           <div className="cardInfo">
             <h4>Simon Game</h4>
             <p>Memory Game</p>

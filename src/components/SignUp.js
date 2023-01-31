@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Android from "@mui/icons-material/Android";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -48,7 +50,7 @@ export default function SignUp() {
         if (response.status === 201) {
           const token = JSON.stringify(response.data.token);
           localStorage.setItem("userToken", token);
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((err) => {
@@ -87,6 +89,7 @@ export default function SignUp() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            {/* Android */}
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -161,7 +164,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-start">
               <Grid item>
-                <Link to="/login">Already have an account? Login</Link>
+                <Link to="/">Already have an account? Login</Link>
               </Grid>
             </Grid>
           </Box>

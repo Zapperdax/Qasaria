@@ -24,6 +24,11 @@ const Chat = (props) => {
   }, [socket]);
   return (
     <div className="chatbotPage">
+      <img
+        className="floating chatbotPNG"
+        src="/images/chatchatfinal.png"
+        alt="chatbot"
+      />
       <div className="chatInfoContainer">
         <div className="chatbotInformation">Welcome {props.firstName}</div>
         <div className="chatMain">
