@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Android from "@mui/icons-material/Android";
-
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { api } from "../utils/axois";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../features/user/userSlice";
 
 function Copyright(props) {
   return (
@@ -37,6 +37,7 @@ const theme = createTheme();
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     api
@@ -48,9 +49,14 @@ export default function SignUp() {
       })
       .then((response) => {
         if (response.status === 201) {
-          const token = JSON.stringify(response.data.token);
-          localStorage.setItem("userToken", token);
-          navigate("/home");
+          const user = {
+            token: response.data.token,
+            email: response.data.user.email,
+            name: response.data.user.firstName,
+          };
+          localStorage.setItem("userToken", JSON.stringify(user));
+          dispatch(login(user));
+          navigate("/");
         }
       })
       .catch((err) => {
@@ -164,7 +170,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-start">
               <Grid item>
-                <Link to="/">Already have an account? Login</Link>
+                <Link to="/login">Already have an account? Login</Link>
               </Grid>
             </Grid>
           </Box>

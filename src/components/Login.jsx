@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,12 +7,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Android from "@mui/icons-material/Android";
-
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { api } from "../utils/axois";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { login } from "../features/user/userSlice";
 
 function Copyright(props) {
   return (
@@ -36,6 +37,7 @@ const theme = createTheme();
 
 export default function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = React.useState({
     email: "",
     password: "",
@@ -59,9 +61,25 @@ export default function Login() {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          const token = JSON.stringify(response.data.token);
-          localStorage.setItem("userToken", token);
-          navigate("/home");
+          const user = {
+            token: response.data.token,
+            email: response.data.user.email,
+            name: response.data.user.firstName,
+          };
+          localStorage.setItem("userToken", JSON.stringify(user));
+
+          dispatch(login(user));
+          console.log(user);
+
+          toast("Welcome", {
+            icon: "✅",
+            style: {
+              borderRadius: "10px",
+              background: "#031B34",
+              color: "#fff",
+            },
+          });
+          navigate("/");
         }
       });
   };

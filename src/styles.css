@@ -18,6 +18,7 @@ body{
     margin: 0 !important;
     min-width: 100%;
 }
+
 .navbarToggle{
     background-color:#fafafa;
 }
@@ -31,6 +32,7 @@ body{
     font-size: 1.5rem;
     font-family: 'Peralta', cursive;
     color:#fafafa !important;
+    text-decoration: none;
 }
 .link{
     font-size: 1.2rem;

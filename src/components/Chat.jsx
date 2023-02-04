@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import InputEmoji from "react-input-emoji";
 import io from "socket.io-client";
+import { useSelector } from "react-redux";
 
 const socket = io.connect("http://localhost:2533");
 
-const Chat = (props) => {
+const Chat = () => {
   const [text, setText] = React.useState("");
   const [chat, setChat] = React.useState([]);
   const [messageClass, setMessageClass] = React.useState("userMessage");
+  const user = useSelector((state) => state.users.user);
   const handleText = (text) => {
     socket.emit("sendMessage", { sendMessage: text });
     console.log(text);
@@ -30,7 +32,7 @@ const Chat = (props) => {
         alt="chatbot"
       />
       <div className="chatInfoContainer">
-        <div className="chatbotInformation">Welcome {props.firstName}</div>
+        <div className="chatbotInformation">Welcome {user.name}</div>
         <div className="chatMain">
           {chat.map((message, i) => {
             return (
