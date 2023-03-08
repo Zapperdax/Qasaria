@@ -9,18 +9,11 @@ import Chat from "./Chat";
 import ChatbotLandingPage from "./ChatLanding";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { Toaster } from "react-hot-toast";
-import { useSelector } from "react-redux";
 
 export default function App() {
-  // const { user } = useAuthContext();
-  const user = useSelector((state) => state.users.user);
   return (
     <div className="webpage">
-      {user ? (
-        <Toaster position="bottom-right" reverseOrder="false" />
-      ) : (
-        <Toaster position="top-center" reverseOrder="false" />
-      )}
+      <Toaster position="top-center" reverseOrder="false" />
       <Routes>
         <Route
           path="/"

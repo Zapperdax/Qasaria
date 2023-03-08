@@ -30,7 +30,7 @@ function Cards() {
         {/* //Third Card */}
         <div className="myCard">
           <div className="imageContainer">
-            <img src="/images/qasaria2.jpg" alt="game" />
+            <img src="/images/qasaria3.png" alt="game" />
           </div>
           <div className="cardInfo">
             <h4>Legends Of Qasaria</h4>

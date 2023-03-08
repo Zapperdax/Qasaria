@@ -73,6 +73,7 @@ export default function Login() {
 
           toast("Welcome", {
             icon: "✅",
+            position: "bottom-right",
             style: {
               borderRadius: "10px",
               background: "#031B34",

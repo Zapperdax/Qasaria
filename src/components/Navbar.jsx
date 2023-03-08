@@ -5,12 +5,22 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../features/user/userSlice";
+import toast from "react-hot-toast";
 
 export default function MyNavbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.users.user);
   const handleClick = () => {
+    toast("Successful Logout", {
+      icon: "✅",
+      position: "bottom-right",
+      style: {
+        borderRadius: "10px",
+        background: "#031B34",
+        color: "#fff",
+      },
+    });
     localStorage.removeItem("userToken");
     dispatch(logout());
   };

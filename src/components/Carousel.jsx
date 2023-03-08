@@ -25,7 +25,7 @@ export default function MyCarousel() {
       <Carousel.Item className="carouselItem">
         <img
           className="d-block w-100"
-          src="images/tenzies2.jpg"
+          src="images/tenzies4.png"
           alt="Second slide"
         />
       </Carousel.Item>
@@ -41,7 +41,7 @@ export default function MyCarousel() {
       <Carousel.Item className="carouselItem">
         <img
           className="d-block w-100"
-          src="images/qasaria2.jpg"
+          src="images/qasaria3.png"
           alt="Forth slide"
         />
       </Carousel.Item>

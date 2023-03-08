@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Play', sans-serif;
@@ -9,14 +10,15 @@ body{
 
 .navbar{
     padding: 2rem;
-    background-color: #2f2736 !important;
+    background-color: transparent !important;
     display: flex;
     justify-content:space-between;
     min-width: 100%;
 }
 .navContainer{
-    margin: 0 !important;
+    padding: 0.5rem 3rem;
     min-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .navbarToggle{
@@ -31,7 +33,7 @@ body{
 .logo{
     font-size: 1.5rem;
     font-family: 'Peralta', cursive;
-    color:#fafafa !important;
+    color:black !important;
     text-decoration: none;
 }
 .link{
@@ -40,7 +42,8 @@ body{
     position: relative;
     text-decoration: none;
     margin-right: 1rem;
-    color: #fafafa !important;
+    color: black !important;
+    padding: 0 1rem;
 }
 .link:after {
     content: '';
@@ -59,16 +62,13 @@ body{
     transform-origin: bottom left;
 }
 
-.carousel{
-    padding-top: 5rem;
-}
 .carousel .carousel-item {
     height: 35.25rem;
 }
   
 .carousel-item img {
       position: absolute;
-      object-fit: fill;
+      object-fit:fill;
       top: 0;
       left: 0;
       height: 100%;
