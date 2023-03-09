@@ -9,6 +9,9 @@ import Chat from "./Chat";
 import ChatbotLandingPage from "./ChatLanding";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { Toaster } from "react-hot-toast";
+import Tenzies from "./Tenzies";
+import RockPaperScissors from "./RockPaperScissors";
+import Simon from "./Simon";
 
 export default function App() {
   return (
@@ -44,6 +47,33 @@ export default function App() {
               <>
                 <MyNavbar />
                 <ChatbotLandingPage />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/tenzies"
+            element={
+              <>
+                <MyNavbar />
+                <Tenzies />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/rps"
+            element={
+              <>
+                <MyNavbar />
+                <RockPaperScissors />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/simon"
+            element={
+              <>
+                <MyNavbar />
+                <Simon />
               </>
             }
           ></Route>

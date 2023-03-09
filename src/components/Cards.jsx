@@ -1,6 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Cards() {
+  const navigate = useNavigate();
+  const handleTenzies = () => {
+    navigate("/tenzies");
+  };
+  const handleRPS = () => {
+    navigate("/rps");
+  };
+  const handleSimon = () => {
+    navigate("/simon");
+  };
   return (
     <div className="games">
       <h1>Games</h1>
@@ -14,7 +25,9 @@ function Cards() {
             <h4>RPS</h4>
             <p>Arcade Game</p>
           </div>
-          <div className="play">Play</div>
+          <div className="play" onClick={handleRPS}>
+            Play
+          </div>
         </div>
         {/* //Second Card */}
         <div className="myCard">
@@ -25,7 +38,9 @@ function Cards() {
             <h4>Tenzies</h4>
             <p>RNG Game</p>
           </div>
-          <div className="play">Play</div>
+          <div className="play" onClick={handleTenzies}>
+            Play
+          </div>
         </div>
         {/* //Third Card */}
         <div className="myCard">
@@ -48,7 +63,9 @@ function Cards() {
             <h4>Simon Game</h4>
             <p>Memory Game</p>
           </div>
-          <div className="play">Play</div>
+          <div className="play" onClick={handleSimon}>
+            Play
+          </div>
         </div>
 
         {/* Card Ends Here */}
