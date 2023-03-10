@@ -59,7 +59,6 @@ export default function Login() {
         password: formData.password,
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           const user = {
             token: response.data.token,
