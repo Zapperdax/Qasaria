@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const ChatbotLandingPage = () => {
+  const [room, setRoom] = useState("");
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/chat");
+    navigate("/chat", { state: room });
   };
   return (
     <div className="chatbotPage">
@@ -19,6 +20,8 @@ const ChatbotLandingPage = () => {
               label="Room ID"
               variant="standard"
               color="success"
+              value={room}
+              onChange={(e) => setRoom(e.target.value)}
             ></TextField>
 
             <Button

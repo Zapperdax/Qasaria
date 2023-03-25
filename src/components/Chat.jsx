@@ -1,29 +1,38 @@
 import React, { useEffect } from "react";
 import InputEmoji from "react-input-emoji";
+import { useLocation } from "react-router-dom";
 import io from "socket.io-client";
 import { useSelector } from "react-redux";
 
 const socket = io.connect("http://localhost:2533");
 
 const Chat = () => {
+  const { state } = useLocation();
   const [text, setText] = React.useState("");
   const [chat, setChat] = React.useState([]);
-  const [messageClass, setMessageClass] = React.useState("userMessage");
   const user = useSelector((state) => state.users.user);
+
   const handleText = (text) => {
-    socket.emit("sendMessage", { sendMessage: text });
-    console.log(text);
-    setMessageClass("userMessage");
-    setChat((preValue) => [...preValue, text]);
+    const messageData = {
+      room: state,
+      sendMessage: text,
+      username: user.name,
+    };
+    socket.emit("sendMessage", messageData);
   };
 
   useEffect(() => {
-    socket.on("receiveMessage", ({ sendMessage }) => {
-      setMessageClass("receiverMessage");
-      setChat((preValue) => [...preValue, sendMessage]);
+    socket.on("receiveMessage", (messageData) => {
+      setChat((prevValue) => [
+        ...prevValue,
+        {
+          username: messageData.username,
+          message: messageData.sendMessage,
+        },
+      ]);
     });
-    // eslint-disable-next-line
-  }, [socket]);
+  }, []);
+
   return (
     <div className="chatbotPage">
       <img
@@ -36,8 +45,10 @@ const Chat = () => {
         <div className="chatMain">
           {chat.map((message, i) => {
             return (
-              <div key={i} className={messageClass}>
-                <p>{message}</p>
+              <div key={i} className="userMessage">
+                <p>
+                  <strong>{message.username}:</strong> {message.message}
+                </p>
               </div>
             );
           })}

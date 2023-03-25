@@ -1,9 +1,19 @@
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
+import { fetchRPSScores, rpsScores } from "../features/leaderboard/rpsSlice";
+import {
+  fetchTenzieScore,
+  tenzieScores,
+} from "../features/leaderboard/tenzieSlice";
+import {
+  fetchSimonScore,
+  simonScores,
+} from "../features/leaderboard/simonSlice";
 import { logout } from "../features/user/userSlice";
 import LeaderBoardModal from "./Modal";
 import toast from "react-hot-toast";
@@ -12,6 +22,9 @@ export default function MyNavbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.users.user);
+  const RPSScores = useSelector(rpsScores);
+  const TENZIEScores = useSelector(tenzieScores);
+  const SIMONScores = useSelector(simonScores);
   const handleClick = () => {
     toast("Successful Logout", {
       icon: "✅",
@@ -31,6 +44,13 @@ export default function MyNavbar() {
   const handleLogin = () => {
     navigate("/login");
   };
+
+  useEffect(() => {
+    dispatch(fetchRPSScores());
+    dispatch(fetchTenzieScore());
+    dispatch(fetchSimonScore());
+  }, [dispatch]);
+
   return (
     <Navbar bg="light" expand="lg" className="navbar fixed-top">
       <Container className="navContainer">
@@ -52,7 +72,11 @@ export default function MyNavbar() {
             <Link className="link" to="/chatlandingpage">
               Chat
             </Link>
-            <LeaderBoardModal />
+            <LeaderBoardModal
+              RPSScores={RPSScores}
+              TENZIEScores={TENZIEScores}
+              SIMONScores={SIMONScores}
+            />
           </Nav>
           {user ? (
             <Link className="link" to="/" onClick={handleClick}>
