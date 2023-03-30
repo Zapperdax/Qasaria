@@ -73,9 +73,12 @@ export default function MyNavbar() {
               Chat
             </Link>
             <LeaderBoardModal
-              RPSScores={RPSScores}
-              TENZIEScores={TENZIEScores}
-              SIMONScores={SIMONScores}
+              RPSScores={[
+                { name: "Sahar", highScore: 10 },
+                { name: "Maria", highScore: 9 },
+              ]}
+              TENZIEScores={[{ name: "Sahar", highScore: 5 }]}
+              SIMONScores={[{ name: "Sahar", highScore: 5 }]}
             />
           </Nav>
           {user ? (
