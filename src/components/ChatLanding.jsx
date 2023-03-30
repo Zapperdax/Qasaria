@@ -43,13 +43,7 @@ const ChatbotLandingPage = () => {
             Your Personal Chat Room
           </p>
         </div>
-        <div className="phoneOnlyDoodle">
-          <img
-            className="chatbotdoodle"
-            src="/images/chatchatfinal.png"
-            alt="doodle"
-          />
-        </div>
+
         <div className="chatRightSide">
           <img
             className="webChatbotDoodle"

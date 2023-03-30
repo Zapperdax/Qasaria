@@ -9,6 +9,7 @@ const socket = io.connect("http://localhost:2533");
 const Chat = () => {
   const { state } = useLocation();
   const [text, setText] = React.useState("");
+
   const [chat, setChat] = React.useState([]);
   const user = useSelector((state) => state.users.user);
 

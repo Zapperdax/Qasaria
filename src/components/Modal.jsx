@@ -34,7 +34,7 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               1.{" "}
               {RPSScores.length >= 1 ? (
                 <div>
-                  {RPSScores[0].name} - {RPSScores[0].highScore}
+                  {RPSScores[0].name} - {RPSScores[0].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -44,7 +44,7 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               2.
               {RPSScores.length >= 2 ? (
                 <div>
-                  {RPSScores[1].name} - {RPSScores[1].highScore}
+                  {RPSScores[1].name} - {RPSScores[1].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -54,7 +54,7 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               3.{" "}
               {RPSScores.length >= 3 ? (
                 <div>
-                  {RPSScores[2].name} - {RPSScores[2].highScore}
+                  {RPSScores[2].name} - {RPSScores[2].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -70,7 +70,8 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               1.{" "}
               {TENZIEScores.length >= 1 ? (
                 <div>
-                  {TENZIEScores[0].name} - {TENZIEScores[0].highScore}
+                  {TENZIEScores[0].name} -{" "}
+                  {TENZIEScores[0].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -80,7 +81,8 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               2.{" "}
               {TENZIEScores.length >= 2 ? (
                 <div>
-                  {TENZIEScores[1].name} - {TENZIEScores[1].highScore}
+                  {TENZIEScores[1].name} -{" "}
+                  {TENZIEScores[1].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -90,7 +92,8 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               3.{" "}
               {TENZIEScores.length >= 3 ? (
                 <div>
-                  {TENZIEScores[2].name} - {TENZIEScores[2].highScore}
+                  {TENZIEScores[2].name} -{" "}
+                  {TENZIEScores[2].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -115,7 +118,7 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               1.{" "}
               {SIMONScores.length >= 1 ? (
                 <div>
-                  {SIMONScores[0].name} - {SIMONScores[0].highScore}
+                  {SIMONScores[0].name} - {SIMONScores[0].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -125,7 +128,7 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               2.{" "}
               {SIMONScores.length >= 2 ? (
                 <div>
-                  {SIMONScores[1].name} - {SIMONScores[1].highScore}
+                  {SIMONScores[1].name} - {SIMONScores[1].highScore.toString()}
                 </div>
               ) : (
                 0
@@ -135,7 +138,7 @@ const LeaderBoardModal = ({ RPSScores, TENZIEScores, SIMONScores }) => {
               3.{" "}
               {SIMONScores.length >= 3 ? (
                 <div>
-                  {SIMONScores[2].name} - {SIMONScores[2].highScore}
+                  {SIMONScores[2].name} - {SIMONScores[2].highScore.toString()}
                 </div>
               ) : (
                 0

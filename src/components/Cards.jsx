@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import HelpIcon from "@mui/icons-material/Help";
 
 function Cards() {
   const navigate = useNavigate();
@@ -18,6 +19,10 @@ function Cards() {
       <div className="cardContainer">
         {/* //first Card */}
         <div className="myCard">
+          <HelpIcon
+            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+          />
+
           <div className="imageContainer">
             <img src="/images/rps.webp" alt="game" />
           </div>
@@ -31,6 +36,10 @@ function Cards() {
         </div>
         {/* //Second Card */}
         <div className="myCard">
+          <HelpIcon
+            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            color="success"
+          />
           <div className="imageContainer">
             <img src="/images/tenzies2.jpg" alt="game" />
           </div>
@@ -44,6 +53,10 @@ function Cards() {
         </div>
         {/* //Third Card */}
         <div className="myCard">
+          <HelpIcon
+            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            color="success"
+          />
           <div className="imageContainer">
             <img src="/images/qasaria3.png" alt="game" />
           </div>
@@ -55,6 +68,10 @@ function Cards() {
         </div>
         {/* //Forth Card */}
         <div className="myCard">
+          <HelpIcon
+            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            color="success"
+          />
           <div className="imageContainer">
             <img src="/images/simon.jpg" alt="game" />
           </div>

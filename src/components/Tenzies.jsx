@@ -82,7 +82,6 @@ export default function App() {
       clearInterval(interval);
     };
   }, [isRunning]);
-  console.log(time);
 
   return (
     <div className="gamesContainer">
