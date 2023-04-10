@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { api } from "../utils/axois";
+import { useSelector } from "react-redux";
 
 const Simon = () => {
+  const user = useSelector((state) => state.users.user);
   const [isOn, setIsOn] = useState(false);
 
   const colorList = ["green", "red", "yellow", "blue"];
   const [flashColor, setFlashColor] = useState("");
+  var sounds = {
+    green: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+    red: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+    blue: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+    yellow: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
+  };
 
   const initPlay = {
     isDisplay: false,
@@ -45,13 +54,14 @@ const Simon = () => {
   }, [isOn, play.isDisplay, play.colors.length]);
 
   const displayColors = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 500));
     for (let i = 0; i < play.colors.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       setFlashColor(play.colors[i]);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      sounds[play.colors[i]].play();
+      await new Promise((resolve) => setTimeout(resolve, 500));
       setFlashColor("");
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       if (i === play.colors.length - 1) {
         const copyColors = [...play.colors];
 
@@ -65,6 +75,7 @@ const Simon = () => {
     }
   };
   const handleClick = async (color) => {
+    sounds[color].play();
     if (!play.isDisplay && play.userPlay) {
       const copyUserColors = [...play.userColors];
       const lastColor = copyUserColors.pop();
@@ -73,7 +84,7 @@ const Simon = () => {
         if (copyUserColors.length) {
           setPlay({ ...play, userColors: copyUserColors });
         } else {
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, 500));
           setPlay({
             ...play,
             isDisplay: true,
@@ -83,10 +94,15 @@ const Simon = () => {
           });
         }
       } else {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 500));
         setPlay({ ...initPlay, score: play.colors.length });
+        await api.post("/simon/highScore", {
+          email: user.email,
+          highScore: play.colors.length,
+          name: user.name,
+        });
       }
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       setFlashColor("");
     }
   };

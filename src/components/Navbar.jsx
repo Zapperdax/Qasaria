@@ -51,6 +51,8 @@ export default function MyNavbar() {
     dispatch(fetchSimonScore());
   }, [dispatch]);
 
+  console.log(RPSScores);
+
   return (
     <Navbar bg="light" expand="lg" className="navbar fixed-top">
       <Container className="navContainer">
@@ -73,12 +75,9 @@ export default function MyNavbar() {
               Chat
             </Link>
             <LeaderBoardModal
-              RPSScores={[
-                { name: "Sahar", highScore: 10 },
-                { name: "Maria", highScore: 9 },
-              ]}
-              TENZIEScores={[{ name: "Sahar", highScore: 5 }]}
-              SIMONScores={[{ name: "Sahar", highScore: 5 }]}
+              RPSScores={RPSScores}
+              TENZIEScores={TENZIEScores}
+              SIMONScores={SIMONScores}
             />
           </Nav>
           {user ? (
