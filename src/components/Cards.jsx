@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HelpIcon from "@mui/icons-material/Help";
+import InstructionsModal from "./InstructionsModal";
 
 function Cards() {
   const navigate = useNavigate();
@@ -13,14 +14,46 @@ function Cards() {
   const handleSimon = () => {
     navigate("/simon");
   };
+  const [open, setOpen] = useState(false);
+  const [modalNumber, setModalNumber] = useState(1);
+
+  const handleRpsOpen = () => {
+    setOpen(true);
+    setModalNumber(1);
+  };
+
+  const handleTenziesOpen = () => {
+    setOpen(true);
+    setModalNumber(2);
+  };
+
+  const handleSimonOpen = () => {
+    setOpen(true);
+    setModalNumber(4);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div className="games">
+      <InstructionsModal
+        open={open}
+        handleClose={handleClose}
+        modalNumber={modalNumber}
+      />
       <h1>Games</h1>
       <div className="cardContainer">
         {/* //first Card */}
         <div className="myCard">
           <HelpIcon
-            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            onClick={handleRpsOpen}
+            sx={{
+              position: "absolute",
+              right: 5,
+              top: 5,
+              color: "#fff",
+              cursor: "pointer",
+            }}
           />
 
           <div className="imageContainer">
@@ -37,7 +70,14 @@ function Cards() {
         {/* //Second Card */}
         <div className="myCard">
           <HelpIcon
-            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            onClick={handleTenziesOpen}
+            sx={{
+              position: "absolute",
+              right: 5,
+              top: 5,
+              color: "#fff",
+              cursor: "pointer",
+            }}
             color="success"
           />
           <div className="imageContainer">
@@ -54,7 +94,13 @@ function Cards() {
         {/* //Third Card */}
         <div className="myCard">
           <HelpIcon
-            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            sx={{
+              position: "absolute",
+              right: 5,
+              top: 5,
+              color: "#fff",
+              cursor: "pointer",
+            }}
             color="success"
           />
           <div className="imageContainer">
@@ -69,7 +115,14 @@ function Cards() {
         {/* //Forth Card */}
         <div className="myCard">
           <HelpIcon
-            sx={{ position: "absolute", right: 5, top: 5, color: "#fff" }}
+            onClick={handleSimonOpen}
+            sx={{
+              position: "absolute",
+              right: 5,
+              top: 5,
+              color: "#fff",
+              cursor: "pointer",
+            }}
             color="success"
           />
           <div className="imageContainer">
